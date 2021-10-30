@@ -1,0 +1,24 @@
+<!doctype html>
+<head>
+<meta charset="utf-8">
+<script type="text/javascript">
+
+// is this page inside a frame?
+function inFrame() {
+    try {
+        return window.self !== window.top;
+    } catch (e) {
+        return true;
+    }
+}
+
+// is this windows inside a frame?
+if ( inFrame() ) // trigger LMS Exit function
+	window.parent.GetControlWindow().Control.TriggerReturnToLMS();
+else // mobile 
+	window.close(); // if this is a mobile device, it will close
+	
+</script>
+</head>
+<body></body>
+</html>
